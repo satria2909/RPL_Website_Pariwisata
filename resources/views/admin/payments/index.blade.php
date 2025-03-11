@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Booking') }}</h1>
+                    <h1 class="m-0">{{ __('Payment') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -26,28 +26,28 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Order ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Number Phone</th>
-                                        <th>Date</th>
-                                        <th>Travel Package</th>
-                                        <th>Price</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($bookings as $booking)
+                                @foreach($payments as $payment)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $booking->name }}</td>
-                                        <td>{{ $booking->email }}</td>
-                                        <td>{{ $booking->number_phone }}</td>
-                                        <td>{{ $booking->date }}</td>
-                                        <td>{{ $booking->travel_package->location }}</td>
-                                        <td>{{ $booking->travel_package->price }}</td>
+                                        <td>{{ $payment->order_id }}</td>
+                                        <td>{{ $payment->name }}</td>
+                                        <td>{{ $payment->email }}</td>
+                                        <td>{{ $payment->phone }}</td>
+                                        <td>{{ $payment->status }}</td>
+                                        <td>{{ $payment->amount }}</td>
                                         
                                         <td>
-                                            <form onclick="return confirm('are you sure ?');" class="d-inline-block" action="{{ route('admin.bookings.destroy', [$booking]) }}" method="post">
+                                            <form onclick="return confirm('are you sure ?');" class="d-inline-block" action="{{ route('admin.payments.destroy', [$payment]) }}" method="post">
                                                 @csrf 
                                                 @method('delete')
                                                 <button class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i> </button>
@@ -61,7 +61,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer clearfix">
-                            {{ $bookings->links() }}
+                            {{ $payments->links() }}
                         </div>
                     </div>
 

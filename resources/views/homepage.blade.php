@@ -3,10 +3,10 @@
 @section('content')
 <!--==================== HOME ====================-->
 <section>
-    <div class="swiper-container">
-        <div>
+    <div class="swiper-container gallery-top">
+          <div class="swiper-wrapper">
             <!--========== ISLANDS 1 ==========-->
-            <section class="islands">
+            <section class="islands swiper-slide">s
                 <img
                     src="{{ asset('frontend/assets/img/hero.jpg') }}"
                     alt=""
@@ -16,13 +16,12 @@
                     <div class="islands__container container">
                         <div
                             class="islands__data"
-                            style="z-index: 99; position: relative"
-                        >
+                            style="z-index: 99; position: relative">
                             <h2 class="islands__subtitle">
                                 Explore
                             </h2>
                             <h1 class="islands__title">
-                                Wonderfull World
+                                Wonderfull Indonesia
                             </h1>
                             <p class="islands__description">
                                 It's the perfect time travel and
@@ -55,6 +54,8 @@
         <div class="logos__img">
             <img src="{{ asset('frontend/assets/img/airasia.png') }}" alt="" />
         </div>
+        
+        
     </div>
 </section>
 
@@ -80,7 +81,7 @@
                             />
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>{{ number_format($travel_package->price,2) }}
+                                    <span>Rp </span>{{ number_format($travel_package->price) }}
                                 </h2>
                                 <h3 class="popular__title">
                                     {{ $travel_package->location}}

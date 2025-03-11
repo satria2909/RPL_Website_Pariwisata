@@ -10,10 +10,8 @@ class BookingController extends Controller
 {
     public function store(BookingRequest $request)
     {
-        Booking::create($request->validated());
+        $booking = Booking::create($request->validated());
 
-        return redirect()->back()->with([
-            'message' => "Success, we'll process your booking"
-        ]);
+        return redirect()->route('checkout', $booking->id);
     }
 }

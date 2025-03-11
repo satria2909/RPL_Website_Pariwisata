@@ -57,6 +57,7 @@
                     onfocus="(this.type='date')"
                     id="date"
                   />
+                  <input type="text" name="travel_package_price" value="{{ $travel_package->price }}" readonly>
                   <button type="submit" class="button button-booking">Send</button>
                 </form>
               </div>

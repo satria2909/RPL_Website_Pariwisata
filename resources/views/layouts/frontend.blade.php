@@ -11,15 +11,12 @@
         />
 
         <!--=============== SWIPER CSS ===============-->
-        <link
-            rel="stylesheet"
-            href="{{ asset('frontend/assets/libraries/swiper-bundle.min.css') }}"
-        />
+        <link rel="stylesheet" href="{{ asset('frontend/assets/libraries/swiper-bundle.min.css') }}" />
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" />
         @stack('style-alt')
-        <title>Travel Website - ypcode</title>
+        <title>GoTravel</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -55,13 +52,19 @@
                                 <span>Contact</span>
                             </a>
                         </li>
+                        <li class="nav__item">
+                            <a target="_blank" href="https://terabox.com/s/1x7niig9kNll5T6YIwVqd5w" class="nav__link {{ request()->is('') ? ' active-link' : '' }}">
+                                <i class="bx bx-photo-album"></i>
+                                <span>Dokumentasi</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- theme -->
                 <i class="bx bx-moon change-theme" id="theme-button"></i>
 
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=088111444&text=I want to booking" class="button nav__button">Booking Now</a>
+                
             </nav>
         </header>
 
@@ -153,7 +156,7 @@
 
             <div class="footer__info container">
                 <span class="footer__copy">
-                    &#169; ypcode. All rigths reserved
+                    &#169; All rigths reserved
                 </span>
                 <div class="footer__privacy">
                     <a href="#">Terms & Agreements</a>
